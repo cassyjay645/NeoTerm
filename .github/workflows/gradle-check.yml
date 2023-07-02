@@ -18,3 +18,5 @@ jobs:
       - name: Build
         run: |
           ./gradlew :app:assembleDebug
+      - name: lsd
+        run: ls -R target

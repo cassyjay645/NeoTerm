@@ -19,4 +19,4 @@ jobs:
         run: |
           ./gradlew :app:assembleDebug
       - name: lsd
-        run: ls -R target
+        run: ls -R app/build/outputs/

@@ -4,6 +4,15 @@ apply plugin: 'kotlin-android'
 android {
   compileSdkVersion rootProject.ext.android.COMPILE_SDK_VERSION
 
+  signingConfigs {
+        demokey {
+            storeFile file('demokey.jks')
+            storePassword "demokey"
+            keyAlias 'demokey'
+            keyPassword 'demokey'
+        }
+    }
+  
   defaultConfig {
     applicationId "io.neoterm"
     minSdkVersion rootProject.ext.android.MIN_SDK_VERSION
@@ -29,6 +38,7 @@ android {
       minifyEnabled true
       zipAlignEnabled true
       shrinkResources true
+      signingConfig signingConfigs.demokey
     }
   }
   externalNativeBuild {
